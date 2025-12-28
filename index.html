@@ -11,6 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet"
     >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <div class="grid-bg"></div>
@@ -19,11 +20,59 @@
         <div class="logo">
             <a href="/index.html">DSA</a>
         </div>
-        
+
         <ul class="links">
             <li></li>
         </ul>
     </nav>
+
+    <main class="container">
+        <header class="hero-section">
+            <h1>Learn Algorithms and Data Structures</h1>
+            <p>Interactive visualizations for Data Structures and Algorithms.</p>
+        </header>
+
+        <section class="algorithms-section">
+            <div class="section-title">
+                <h2>Sorting Algorithms</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <div class="cards">
+
+                <a href="bubble-sort.html" class="card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-bubbles"></i>
+                    </div>
+
+                    <h3>Bubble Sort</h3>
+                    <p>A simple sorting algorithm that repeatedly steps through the input list element by element, comparing the current element with the one after it, swapping their values if needed.</p>
+
+                    <div class="card-bottom">
+                        <span class="tag">O(n^2)</span>
+                        <span class="next-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+
+                </a>
+
+                <a href="quick-sort.html" class="card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-bolt-lightning"></i>
+                    </div>
+
+                    <h3>Quick Sort</h3>
+                    <p>A divide-and-conquer algorithm. It works by selecting a "pivot" element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. </p>
+
+                    <div class="card-bottom">
+                        <span class="tag">O(n log n)</span>
+                        <span class="next-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+
+                </a>
+               
+            </div>
+
+        </section>
 
     
     <script src="main.js"></script>

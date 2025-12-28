@@ -56,3 +56,48 @@ body {
     text-decoration: none;
     color: #1a1a1a;
 }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero-section {
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.03em;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    color: #667;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.section-title h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.title-line {
+    height: 2px;
+    background: #1a1a1a;
+    width: 100%;
+}
+
