@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Sort</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="grid-bg"></div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/index.html">DSA</a>
+        </div>
+
+        <ul class="links">
+            <li></li>
+        </ul>
+    </nav>
+
+   <main class="container">
+        <div id="visualization-area">
+
+            <div class="viz-header">
+                <a href="index.html" class="btn-back">Back</a>
+                <h2 id="viz-title">Bubble Sort</h2>
+            </div>
+
+            <div class="viz-layout">
+                <div class="viz-canvas-container">
+                    <div id="canvas-wrapper"></div>
+
+                    <div class="controls" id="sort-controls">
+                        <button id="btn-reset" class="btn-control">Reset</button>
+                        <button id="btn-play" class="btn-control">Play</button>
+
+                        <div class="speed-control">
+                            <label>Speed</label>
+                            <input type="range" id="speed-slider" min="1" max="100" value="50">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="viz-info">
+                    <div class="code-block">
+                        <pre><code id="code-display">
+function bubbleSort(arr) {
+    const n = arr.length;
+
+    for (let i = 0; i < n - 1; i++) {
+        let swapped = false;
+
+        for (let j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+
+                const temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+                swapped = true;
+            }
+        }
+
+        if (!swapped) break;
+    }
+
+    return arr;
+}
+                                                
+                        </code></pre>
+                    </div>
+
+                    <div class="explanation-panel">
+                        <h3>Description</h3>
+                        <p>Merge sort is a popular sorting algorithm known for its efficiency and stability. It follows the Divide and Conquer approach. It works by recursively dividing the input array into two halves, recursively sorting the two halves and finally merging them back together to obtain the sorted array.</p>
+                        <h3>Complexity</h3>
+                        <p><strong>Time Complexity:</strong> O(n log n)</p>
+                        <p><strong>Space Complexity:</strong> O(n)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    </div>
+    <script src="main.js"></script>
+    <script src="merge-sort.js"></script>
+</body>
+</html>
