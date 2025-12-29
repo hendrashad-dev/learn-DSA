@@ -224,6 +224,30 @@ body {
 }
 
 
+.controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 2px solid #eee;
+}
+
+.btn-control {
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    padding: 8px 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid #1a1a1a;
+}
+
+.btn-control:hover {
+    background: white;
+    color: #1a1a1a;
+}
+
+
 .viz-layout {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -240,3 +264,29 @@ body {
     flex-direction: column;
 }
 
+#canvas-wrapper {
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 4px;
+    padding-bottom: 2rem;
+    position: relative;
+    height: 400px;
+}
+
+
+.bar {
+    background: #1a1a1a;
+    width: 30px;
+    transition: 0.2s ease,;
+    border: 2px solid #1a1a1a;
+}
+
+.bar.active {
+    background: #2563eb;
+}
+
+.bar.sorted {
+    background: #10b981;
+}
