@@ -56,8 +56,9 @@ body {
     text-decoration: none;
     color: #1a1a1a;
 }
+
 .container {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 2rem;
 }
@@ -160,5 +161,82 @@ body {
 .next-icon {
     font-size: 1.25rem;
     font-weight: 800;
+}
+
+.hidden {
+    display: none;
+}
+
+#visualization-area {
+    padding-top: 2rem;
+}
+
+.viz-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+.btn-back {
+    border: 2px solid #1a1a1a;
+    padding: 8px 1rem;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-back:hover {
+    background: #1a1a1a;
+    color: white;
+}
+
+.viz-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+.explanation-panel {
+    border: 2px solid #1a1a1a;
+    padding: 1.5rem;
+    box-shadow: 4px 4px 0 #1a1a1a;
+}
+
+.explanation-panel h3 {
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+
+.code-block {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 1.5rem;
+    border-radius: 0;
+    border: 2px solid #1a1a1a;
+    font-family: 'JetBrains Mono', monospace;
+    overflow-x: auto;
+    box-shadow: 4px 4px 0 #1a1a1a;
+}
+
+
+.viz-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.viz-canvas-container {
+    background: white;
+    border: 2px solid #1a1a1a;
+    padding: 2rem;
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
 }
 
