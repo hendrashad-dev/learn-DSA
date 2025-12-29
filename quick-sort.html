@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Sort</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="grid-bg"></div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/index.html">DSA</a>
+        </div>
+
+        <ul class="links">
+            <li></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+    <div class="viz-layout">
+        <div class="viz-canvas-container">
+            <div id="canvas-wrapper"></div>
+
+            <div class="controls" id="sort-controls">
+                <button id="btn-reset" class="btn-control">Reset</button>
+                <button id="btn-play" class="btn-control">Play</button>
+
+                <div class="speed-control">
+                    <label>Speed</label>
+                    <input type="range" id="speed-slider" min="1" max="100" value="50">
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="viz-info">
+            <div class="code-block">
+                <pre><code id="code-display">
+function quickSort(arr) {
+    if (arr.length <= 1) {
+        return arr
+    }
+
+    let pivot = arr[arr.length - 1]
+    let left = []
+    let right = []
+
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] < pivot) {
+            left.push(arr[i])
+        } else {
+            right.push(arr[i])
+        }
+    }
+
+    return quickSort(left).concat(pivot, quickSort(right))
+}
+                    
+                    </code></pre>
+                    </div>
+                    <div class="explanation-panel">
+                        <h3>Description</h3>
+                        <p>Quicksort is an efficient, general-purpose sorting algorithm. Quicksort was developed by British computer scientist Tony Hoare in 1959[1] and published in 1961.[2] It is still a commonly used algorithm for sorting. Overall, it is slightly faster than merge sort and heapsort for randomized data, particularly on larger distributions.[3]
+                        </p>
+                        <br>
+                        <h3>Complexity</h3>
+                        <p><strong>Time Complexity:</strong> O(n log n) (Average), O(n^2) (Worst)</p>
+                        <p><strong>Space Complexity:</strong> O(log n)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+    <script src="quick-sort.js"></script>
+</body>
+
+</html>
