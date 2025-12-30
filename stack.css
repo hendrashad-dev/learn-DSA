@@ -1,0 +1,29 @@
+
+.stack-container {
+    display: flex;
+    flex-direction: column-reverse;
+    min-width: 100px;
+    min-height: 300px;
+
+    border-left: 4px solid #1a1a1a;
+    border-right: 4px solid #1a1a1a;
+    border-bottom: 4px solid #1a1a1a;
+    
+    padding: 10px;
+    gap: 5px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.ds-item {
+    width: 80px;
+    height: 40px;
+    border: 2px solid #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+
+    box-shadow: 4px 4px 0 #0000001a;
+}
+

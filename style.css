@@ -290,3 +290,25 @@ body {
 .bar.sorted {
     background: #10b981;
 }
+
+
+.ds-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+}
+
+.ds-input {
+    padding: 0.5rem;
+    border: 2px solid #1a1a1a;
+    width: 100px;
+}
+
+.ds-input:focus {
+    outline: none;
+    box-shadow: 4px 4px 0 #2563eb;
+}
