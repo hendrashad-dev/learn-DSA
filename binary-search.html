@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="binary-search.css">
+</head>
+
+<body>
+    <div class="grid-bg"></div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/index.html">DSA</a>
+        </div>
+
+        <ul class="links">
+            <li></li>
+        </ul>
+    </nav>
+
+   <main class="container">
+        <div id="visualization-area">
+
+            <div class="viz-header">
+                <a href="index.html" class="btn-back">Back</a>
+                <h2 id="viz-title">Binary Search</h2>
+            </div>
+            <div class="viz-layout">
+            <div class="viz-canvas-container">
+                <div id="canvas-wrapper">
+                    <div id="array-container"></div>
+                </div>
+                <div class="controls" id="ds-controls">
+                    <input type="number" id="target-input" placeholder="Target Value" class="ds-input">
+                    <button id="btn-search" class="btn-control">Search</button>
+                    <button id="btn-reset" class="btn-control">New Array</button>
+                </div>
+                <div id="status-message" class="status-message">Enter a number to search</div>
+            </div>
+
+            <div class="viz-info">
+                <div class="code-block">
+                    <pre><code id="code-display">
+function binarySearch(arr, target) {
+    let left = 0
+    let right = arr.length - 1
+
+    while (left <= right) {
+        let middle = Math.floor((left + right) / 2)
+
+        if (arr[middle] === target) {
+            return middle
+        }
+
+        if (arr[middle] < target) {
+            left = middle + 1
+        } else {
+            right = middle - 1
+        }
+    }
+
+    return -1
+}
+</code></pre>
+                </div>
+                <div class="explanation-panel">
+                    <h3>Description</h3>
+                    <p>Binary Search is a searching algorithm that operates on a sorted or monotonic search space, repeatedly dividing it into halves to find a target value or optimal answer in logarithmic time O(log N).</p>
+                    <br>
+                    <h3>Complexity</h3>
+                    <p><strong>Time Complexity:</strong> O(log n)</p>
+                    <p><strong>Space Complexity:</strong> O(1)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script src="main.js"></script>
+<script src="binary-search.js"></script>
+</body>
+
+</html>
