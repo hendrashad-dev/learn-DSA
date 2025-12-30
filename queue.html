@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="stack.css">
+</head>
+
+<body>
+    <div class="grid-bg"></div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/index.html">DSA</a>
+        </div>
+
+        <ul class="links">
+            <li></li>
+        </ul>
+    </nav>
+
+   <main class="container">
+        <div id="visualization-area">
+
+            <div class="viz-header">
+                <a href="index.html" class="btn-back">Back</a>
+                <h2 id="viz-title">Queue</h2>
+            </div>
+            <div class="viz-layout">
+                <div class="viz-canvas-container">
+                    <div id="canvas-wrapper"></div>
+                    <div class="controls" id="ds-controls">
+                        <input type="number" id="ds-input" placeholder="Value" class="ds-input">
+                        <button id="btn-op1" class="btn-control">Push</button>
+                        <button id="btn-op2" class="btn-control">Pop</button>
+                        <button id="btn-clear" class="btn-control">Clear</button>
+                    </div>
+                </div>
+
+                <div class="viz-info">
+                    <div class="code-block">
+<pre><code id="code-display">
+class Queue {
+    constructor() {
+        this.items = [];
+    }
+
+    enqueue(item) {
+        this.items.push(item);
+        console.log(item + " added to queue");
+    }
+
+    dequeue() {
+        if (this.items.length === 0) {
+            console.log("Queue is empty");
+            return;
+        }
+
+        return this.items.shift();
+    }
+
+    peek() {
+        if (this.items.length === 0) {
+            console.log("Queue is empty");
+            return;
+        }
+
+        return this.items[0];
+    }
+
+    isEmpty() {
+        return this.items.length === 0;
+    }
+
+    print() {
+        console.log(this.items);
+    }
+}
+                            
+
+                        </code></pre>
+                    </div>
+                    <div class="explanation-panel">
+                        <h3>Description</h3>
+                        <p>
+                            A Queue Data Structure is a fundamental concept in computer science used for storing and managing data in a specific order.
+                            
+                            It follows the principle of "First in, First out" (FIFO), where the first element added to the queue is the first one to be removed.
+                        <br>
+                        <h3>Complexity</h3>
+                        <p><strong>Access:</strong> O(n)</p>
+                        <p><strong>Search:</strong> O(n)</p>
+                        <p><strong>Insertion (Push):</strong> O(1)</p>
+                        <p><strong>Deletion (Pop):</strong> O(1)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+    <script src="queue.js"></script>
+</body>
+
+</html>

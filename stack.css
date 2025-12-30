@@ -15,6 +15,18 @@
     justify-content: flex-start;
 }
 
+.queue-container {
+    display: flex;
+    flex-direction: row;
+    min-width: 300px;
+    height: 100px;
+    border-top: 4px solid #1a1a1a;
+    border-bottom: 4px solid #1a1a1a;
+    padding: 10px;
+    gap: 5px;
+    align-items: center;
+}
+
 .ds-item {
     width: 80px;
     height: 40px;
