@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search Tree</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="binary-tree.css">
+</head>
+
+<body>
+    <div class="grid-bg"></div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/index.html">DSA</a>
+        </div>
+
+        <ul class="links">
+            <li></li>
+        </ul>
+    </nav>
+
+   <main class="container">
+        <div id="visualization-area">
+
+            <div class="viz-header">
+                <a href="index.html" class="btn-back">Back</a>
+                <h2 id="viz-title">Binary Search Tree</h2>
+            </div>
+
+      <div class="viz-layout">
+        <div class="viz-canvas-container">
+          <div id="canvas-wrapper">
+            <div id="tree-container"></div>
+          </div>
+          <div class="controls" id="ds-controls">
+            <input type="number" id="node-input" placeholder="Value" class="ds-input">
+            <button id="btn-insert" class="btn-control">Insert</button>
+            <button id="btn-search" class="btn-control">Search</button>
+            <button id="btn-delete" class="btn-control">Delete</button>
+            <button id="btn-traverse" class="btn-control">Traverse</button>
+            <button id="btn-clear" class="btn-control">Clear</button>
+          </div>
+          <div id="status-message" class="status-message">Enter a number to insert</div>
+        </div>
+
+        <div class="viz-info">
+          <div class="code-block">
+            <pre><code id="code-display"></code></pre>
+          </div>
+          <div class="explanation-panel">
+            <h3>Description</h3>
+            <p>a binary search tree (BST), also called an ordered or sorted binary tree, is a rooted binary tree data structure with the key of each internal node being greater than all the keys in the respective node's left subtree and less than the ones in its right subtree. The time complexity of operations on the binary search tree is linear with respect to the height of the tree.
+            </p>
+            <h3>Complexity</h3>
+            <p><strong>Time Complexity:</strong> O(log n) on average for search, insert, delete.</p>
+            <p><strong>Space Complexity:</strong> O(n)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+  <script src="binary-tree.js"></script>
+</body>
+
+</html>
