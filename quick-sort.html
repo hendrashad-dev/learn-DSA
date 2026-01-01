@@ -28,7 +28,10 @@
     </nav>
 
     <div class="container">
-
+        <div class="viz-header">
+            <a href="index.html" class="btn-back">Back</a>
+            <h2 id="viz-title">Quick Sort</h2>
+        </div>
     <div class="viz-layout">
         <div class="viz-canvas-container">
             <div id="canvas-wrapper"></div>
@@ -68,7 +71,9 @@ function quickSort(arr) {
 
     return quickSort(left).concat(pivot, quickSort(right))
 }
-                    
+<div class="code-blur-overlay">
+    <button id="btn-show-more" class="btn-show-more">Show More</button>
+</div>
                     </code></pre>
                     </div>
                     <div class="explanation-panel">
@@ -84,7 +89,17 @@ function quickSort(arr) {
             </div>
         </section>
     </main>
-
+    <div id="code-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Quick Sort Implementation</h3>
+                <button id="btn-close-modal" class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <code id="modal-code-display" class="modal-code"></code>
+            </div>
+        </div>
+    </div>
     <script src="main.js"></script>
     <script src="quick-sort.js"></script>
 </body>

@@ -58,3 +58,41 @@ function setupButtons() {
 }
 
 document.addEventListener('DOMContentLoaded', startApp)
+
+class Stack {
+    constructor() {
+        this.items = [];
+    }
+
+    push(item) {
+        this.items.push(item);
+        console.log(item + " pushed to stack");
+    }
+
+    pop() {
+        if (this.items.length === 0) {
+            console.log("Stack is empty");
+            return;
+        }
+
+        return this.items.pop();
+    }
+    peek() {
+        if (this.items.length === 0) {
+            console.log("Stack is empty");
+            return;
+        }
+
+        return this.items[this.items.length - 1];
+    }
+
+    isEmpty() {
+        return this.items.length === 0;
+    }
+
+    print() {
+        console.log(this.items);
+    }
+}
+
+writeCodeModal(Stack)

@@ -58,3 +58,42 @@ function setupButtons() {
 }
 
 document.addEventListener('DOMContentLoaded', startApp)
+
+class Queue {
+    constructor() {
+        this.items = [];
+    }
+
+    enqueue(item) {
+        this.items.push(item);
+        console.log(item + " added to queue");
+    }
+
+    dequeue() {
+        if (this.items.length === 0) {
+            console.log("Queue is empty");
+            return;
+        }
+
+        return this.items.shift();
+    }
+
+    peek() {
+        if (this.items.length === 0) {
+            console.log("Queue is empty");
+            return;
+        }
+
+        return this.items[0];
+    }
+
+    isEmpty() {
+        return this.items.length === 0;
+    }
+
+    print() {
+        console.log(this.items);
+    }
+}
+
+writeCodeModal(Queue)

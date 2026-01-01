@@ -48,3 +48,58 @@ function drawArray(activeIndices = [], sortedIndices = [], pivotIndex = -1) {
         canvasWrapper.appendChild(bar)
     })
 }
+
+
+function writeCodeModal(fullCode) {
+    let modal = document.getElementById('code-modal')
+    let showMorebtn = document.getElementById('btn-show-more')
+    let btnCloseModal = document.getElementById('btn-close-modal')
+    let modalCodeDisplay = document.getElementById('modal-code-display')
+
+    let codeString = fullCode.toString()
+    codeString = codeString
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+
+    const placeholders = [];
+    const addPlaceholder = (content, type) => {
+        const id = `___PLACEHOLDER_${placeholders.length}___`
+        placeholders.push({ id, content, type })
+        return id
+    }
+
+    codeString = codeString.replace(/('.*?'|".*?"|`[\s\S]*?`)/g, (match) => addPlaceholder(match, 'string'))
+
+    codeString = codeString.replace(/(\/\/.*)/g, (match) => addPlaceholder(match, 'comment'))
+    codeString = codeString.replace(/(\/\*[\s\S]*?\*\/)/g, (match) => addPlaceholder(match, 'comment'))
+    codeString = codeString.replace(/\b(class|constructor|function|async|await|return|if|else|while|for|let|const|var|this|new|throw|try|catch|finally)\b/g, '<span class="keyword">$1</span>')
+    codeString = codeString.replace(/\b(true|false|null|undefined)\b/g, '<span class="keyword">$1</span>')
+    codeString = codeString.replace(/\b(\d+)\b/g, '<span class="number">$1</span>')
+    codeString = codeString.replace(/\b([a-zA-Z_$][a-zA-Z0-9_$]*)(?=\()/g, '<span class="function">$1</span>')
+
+    placeholders.forEach(({ id, content, type }) => {
+        codeString = codeString.replace(id, () => `<span class="${type}">${content}</span>`)
+    });
+
+    showMorebtn.addEventListener('click', () => {
+        modalCodeDisplay.innerHTML = codeString
+        modal.classList.add('active')
+    })
+
+    if (btnCloseModal) {
+        btnCloseModal.addEventListener('click', () => {
+            modal.classList.remove('active')
+        });
+    }
+
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active')
+            }
+        });
+    }
+
+
+}

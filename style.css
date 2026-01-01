@@ -106,6 +106,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    margin-bottom: 3rem;
 }
 
 .card {
@@ -261,7 +262,7 @@ body {
     border: 2px solid #1a1a1a;
     padding: 2rem;
     box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
-    min-height: 500px;
+    min-height: 660px;
     display: flex;
     flex-direction: column;
 }
@@ -430,6 +431,9 @@ body {
     color: #569cd6;
 }
 
+.number {
+    color:#10b981
+}
 
 .function {
     color: #dcdcaa;

@@ -54,30 +54,39 @@
 
                 <div class="viz-info">
                     <div class="code-block">
-                        <pre><code id="code-display">
-function bubbleSort(arr) {
-    const n = arr.length;
-
-    for (let i = 0; i < n - 1; i++) {
-        let swapped = false;
-
-        for (let j = 0; j < n - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-
-                const temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-                swapped = true;
-            }
-        }
-
-        if (!swapped) break;
+<pre><code id="code-display">
+function mergeSort(arr) {
+    if (arr.length <= 1) {
+        return arr
     }
 
-    return arr;
+    const mid = Math.floor(arr.length / 2)
+    const left = mergeSort(arr.slice(0, mid))
+    const right = mergeSort(arr.slice(mid))
+
+    let result = []
+    let i = 0
+    let j = 0
+
+    while (i < left.length && j < right.length) {
+        if (left[i] < right[j]) {
+            result.push(left[i])
+            i++
+        } else {
+            result.push(right[j])
+            j++
+        }
+    }
+
+    return result
+        .concat(left.slice(i))
+        .concat(right.slice(j))
 }
                                                 
                         </code></pre>
+                    <div class="code-blur-overlay">
+                        <button id="btn-show-more" class="btn-show-more">Show More</button>
+                    </div>
                     </div>
 
                     <div class="explanation-panel">
@@ -92,7 +101,18 @@ function bubbleSort(arr) {
         </div>
     </main>
 
+    <div id="code-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Merge Sort Implementation</h3>
+                <button id="btn-close-modal" class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <code id="modal-code-display" class="modal-code"></code>
+            </div>
+        </div>
     </div>
+    
     <script src="main.js"></script>
     <script src="merge-sort.js"></script>
 </body>
