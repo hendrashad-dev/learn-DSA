@@ -219,8 +219,10 @@ body {
     border-radius: 0;
     border: 2px solid #1a1a1a;
     font-family: 'JetBrains Mono', monospace;
-    overflow-x: auto;
+    overflow: hidden;
     box-shadow: 4px 4px 0 #1a1a1a;
+    position: relative;
+    max-height: 197px;
 }
 
 
@@ -311,4 +313,124 @@ body {
 .ds-input:focus {
     outline: none;
     box-shadow: 4px 4px 0 #2563eb;
+}
+
+.code-blur-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, #333);
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0 0 0 1rem;
+    z-index: 67;
+}
+
+.btn-show-more {
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 200ms;
+    background: #4a53fb;
+    color: #fff;
+    border: none;
+    padding: 8px 1rem;
+    font-weight: 600;
+    box-shadow: 0 2px 4px #00000033;
+}
+
+.btn-show-more:hover {
+    background-color: #1d4ed8;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000b3;
+    backdrop-filter: blur(5px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 101;
+    opacity: 0;
+    visibility: hidden;
+    transition: 300ms ease-in-out;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #1e1e1e;
+    width: 90%;
+    max-width: 800px;
+    max-height: 85vh;
+
+    border: 2px solid #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.9);
+    transition: 300ms ease-in-out;
+
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-code {
+    display: block;
+    padding: 1.5rem;
+    color: #d4d4d4;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 25px;
+    border-bottom: 1px solid #333;
+    background-color: #252526;
+}
+
+.modal-title {
+    color: #fff;
+    font-size: 18px;
+}
+
+.modal-body {
+    padding: 0;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.keyword {
+    color: #569cd6;
+}
+
+
+.function {
+    color: #dcdcaa;
 }

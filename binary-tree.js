@@ -310,4 +310,64 @@ showBtn.onclick = async () => {
 
     await traverse(myTree.root)
     statusText.innerText += " (Done)" 
-} 
+}
+
+let modal = document.getElementById('code-modal')
+let showMorebtn = document.getElementById('btn-show-more')
+let btnCloseModal = document.getElementById('btn-close-modal')
+let modalCodeDisplay = document.getElementById('modal-code-display')
+
+const fullCode = `
+<span class="keyword">class</span> Node {
+  <span class="keyword">constructor</span>(value) {
+    <span class="keyword">this</span>.value = value;
+    <span class="keyword">this</span>.left = <span class="keyword">null</span>;
+    <span class="keyword">this</span>.right = <span class="keyword">null</span>;
+  }
+}
+
+<span class="keyword">function</span> <span class="function">insert</span>(node, value) {
+
+<span class="keyword">if</span> (!node) <span class="keyword">return</span> <span class="keyword">new</span> Node(value);
+
+  <span class="keyword">if</span> (value < node.value) {
+    node.left = <span class="function">insert</span>(node.left, value);
+  } 
+  <span class="keyword">else</span> {
+    node.right = <span class="function">insert</span>(node.right, value);
+  }
+  
+  <span class="keyword">return</span> node;
+}
+
+
+<span class="keyword">function</span> <span class="function">search</span>(node, value) {
+  <span class="keyword">if</span> (!node || node.value === value) <span class="keyword">return</span> node;
+
+  <span class="keyword">if</span> (value < node.value) <span class="keyword">return</span> <span class="function">search</span>(node.left, value);
+
+  <span class="keyword">return</span> <span class="function">search</span>(node.right, value);
+}
+
+`
+
+if (showMorebtn) {
+    showMorebtn.addEventListener('click', () => {
+        modalCodeDisplay.innerHTML = fullCode
+        modal.classList.add('active')
+    });
+}
+
+if (btnCloseModal) {
+    btnCloseModal.addEventListener('click', () => {
+        modal.classList.remove('active')
+    });
+}
+
+if (modal) {
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active')
+        }
+    });
+}
